@@ -2,7 +2,7 @@ import pygame
 import random
 import sys
 
-a = 0
+
 pygame.init()
 
 SCREEN_WIDTH = 960
