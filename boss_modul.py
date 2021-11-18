@@ -124,7 +124,7 @@ class Boss_missile:
 
     def boss_hit(self,boss):
         if boss.hit == False:  # chi ufo con song moi dc nha dan
-            if self.fired  == False and random.randint(1,1) == 1:
+            if self.fired  == False and random.randint(1,200) == 1:
                 self.fired = True
             # nếu nhả đạn
         if self.fired == True and  self.firing == False:

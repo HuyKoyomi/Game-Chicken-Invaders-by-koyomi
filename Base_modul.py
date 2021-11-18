@@ -37,10 +37,10 @@ class Base:
     x_loc = 300
     y_loc = 550
     time_boom =  0
-    hp = 5
+    hp = 100
     num_chicken_thighs =  0
     score = 0
-    rocket = 10
+    rocket = 1
     game_over = "false" # "true" , "checked"
     winner = "false" # "true" , "checked"
     #---------------------------------------------------------------------------

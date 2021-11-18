@@ -65,12 +65,21 @@ def display_boss_hp(boss):
 
 def display_game_over(base):
     if base.game_over == "checked":
-        game_screen.blit(game_over_image, [200,100])
-        game_screen.blit(base_destroyed_image, [base.x_loc-10, base.y_loc-10] )
+        game_screen.blit(game_over_image, [220,50])
+        game_screen.blit( base_destroyed_image, [base.x_loc-10, base.y_loc-10] )
+        score_text = 'Score: ' + str(base.score)
+        display_text = font1.render(score_text, True, LIGHT_YELLOW)
+        game_screen.blit(display_text , [300,400])
+        score_text = 'Thank You For Playing ^^!'
+        display_text = font1.render(score_text, True, LIGHT_YELLOW)
+        game_screen.blit(display_text , [150,470])
 
 def display_winner(base):
     if base.winner == "checked":
-        game_screen.blit(winner_image, [250,100])
+        game_screen.blit(winner_image, [220,70])
         score_text = 'Score: ' + str(base.score)
         display_text = font1.render(score_text, True, LIGHT_YELLOW)
-        game_screen.blit(display_text , [200,200])
+        game_screen.blit(display_text , [300,400])
+        score_text = 'Thank You For Playing ^^!'
+        display_text = font1.render(score_text, True, LIGHT_YELLOW)
+        game_screen.blit(display_text , [150,500])

@@ -20,7 +20,7 @@ SCREEN_HEIGHT = 614
 LIGHT_YELLOW = (255, 255, 204)
 winner_image =  pygame.image.load('image/winner.png')
 winner_image  = pygame.transform.scale(winner_image , (SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
-font1 = pygame.font.SysFont('Algerian', 70)     # font chữ
+font1 = pygame.font.SysFont('Algerian', 50)     # font chữ
 
 game_screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Game Chicken Invaders") # koyomi
@@ -35,7 +35,7 @@ spaceship_hit_sound = pygame.mixer.Sound('music/spaceship_hit.ogg')
 launch_sound = pygame.mixer.Sound('music/launch.ogg')
 boom_sound = pygame.mixer.Sound('music/boom_sound.mp3')
 
-NUM_OF_CHICKEN = 50
+NUM_OF_CHICKEN = 20
 
 def main():
     #======================================================================================
@@ -67,10 +67,6 @@ def main():
     while True:
 
         game_screen.blit(background_image, [0, 0])
-        # game_screen.blit(winner_image, [250,80])
-        # score_text = 'YOUR SCORE: ' + str(base.score)
-        # display_text = font1.render(score_text, True, LIGHT_YELLOW)
-        # game_screen.blit(display_text , [200,400])
        
         # xe tăng + đạn + di chuyen dan 
         if base.game_over == "false":
