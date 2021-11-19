@@ -105,3 +105,12 @@ def check_roket_and_boss(boss,rocket,base):
         if rocket_rect.colliderect(chicken_rect): # nếu băn trúng
             boss.hp -= 0.3
             base.score += 1
+            
+#==============================================================
+def check_base_and_boss(base,boss): 
+    base_rect = pygame.Rect(base.x_loc, base.y_loc, Base_modul.base_width,Base_modul.base_height)
+    boss_rect = pygame.Rect(boss.x_loc,boss.y_loc, boss_modul.boss_width,boss_modul.boss_height)
+    # check boss với xe
+    if base_rect.colliderect(boss_rect) :
+        base.hp -= 0.3   # giảm máu
+        base.time_boom = 10

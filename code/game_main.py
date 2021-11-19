@@ -2,20 +2,18 @@ import pygame
 import random
 import sys
 
-from pygame import image
-
 from Chicken_modul import chicken_thighs, chicken,chicken_missile 
 from Base_modul import Base, Base_missile,Base_defense
 from check_collision import check_base_missile_and_chicken, check_roket_and_chicken,update_chicken_hit,check_base_and_chicken_missile,check_base_and_chicken_thighs
-from check_collision import check_base_missile_and_boss,check_base_and_boss_missile,check_roket_and_boss
+from check_collision import check_base_missile_and_boss,check_base_and_boss_missile,check_roket_and_boss,check_base_and_boss
 from rocket_modul import Rocket, rocket_width
 from display_on_screen import display_on_screen,display_boss_hp,display_game_over,display_winner
 from boss_modul import Boss,Boss_missile
-import Base_modul,boss_modul
+import Base_modul
 
-NUM_OF_CHICKEN = 5 
+NUM_OF_CHICKEN = 0 
 
-SETTING_BASE_SPEED = 5
+SETTING_BASE_SPEED = 7
 SCREEN_WIDTH = 960
 SCREEN_HEIGHT = 614
 
@@ -80,11 +78,12 @@ def main():
             base_defense.draw_defense(base)
             base.update_roket_and_defense(base_defense)
         else: display_game_over(base)
+        
         base.check_game_over()
         base.check_winner(boss)
         
         
-        boss.check_boss_appear(base,chicken_list)
+        boss.check_boss_appear(base,chicken_list,NUM_OF_CHICKEN)
         if boss.statu == 'appear':
             boss.draw_boss()
             boss.move()
@@ -94,6 +93,8 @@ def main():
             boss_missile.boss_hit(boss)
             check_base_missile_and_boss(boss,base_missile,base)
             check_base_and_boss_missile(base,boss_missile)
+            check_base_and_boss(base,boss)
+            
             display_boss_hp(boss)
         else: display_winner(base)
         
@@ -145,6 +146,16 @@ def main():
                 base.x_loc += SETTING_BASE_SPEED
                 if base.x_loc > SCREEN_WIDTH - Base_modul.base_width:
                     base.x_loc = SCREEN_WIDTH - Base_modul.base_width
+
+            if key_pressed[pygame.K_DOWN]and base.game_over == "false":
+                base.y_loc += SETTING_BASE_SPEED
+                if base.y_loc > SCREEN_HEIGHT - Base_modul.base_height:
+                    base.y_loc = SCREEN_HEIGHT - Base_modul.base_height
+
+            if key_pressed[pygame.K_UP]and base.game_over == "false":
+                base.y_loc -= SETTING_BASE_SPEED
+                if base.y_loc < 0:
+                    base.y_loc = 0
             # set up nut space
             if key_pressed[pygame.K_SPACE]  and base_missile.missile_firing  is False  and base.game_over == "false":
                 base_missile.missile_firing = True

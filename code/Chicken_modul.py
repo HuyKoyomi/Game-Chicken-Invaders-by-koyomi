@@ -149,7 +149,7 @@ class chicken_missile :
     firing =  False
     x_loc = 0
     y_loc = 0
-    speed = 3
+    speed = 2.5
 
     def draw_chicken_missile(self) :
         if self.firing:
@@ -180,7 +180,7 @@ class chicken_thighs:
     x_loc = 0
     y_loc = 0 
     appear_one_time= True
-    speed = 2
+    speed = 1.5
 
     def random_chicken_thighs(self,chicken):
         if chicken.hit == True and self.appear_one_time:  # chi ufo con song moi dc nha dan

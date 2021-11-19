@@ -32,8 +32,8 @@ class Boss:
     ray_time = 0
     statu = 'disappear'
 
-    def check_boss_appear(self,base,chicken_list):
-        if base.score >= 200 :
+    def check_boss_appear(self,base,chicken_list,num):
+        if base.score >= num *  40:
             for i in chicken_list:
                 i.hit = True 
             if self.hp > 0: self.statu = 'appear'   
