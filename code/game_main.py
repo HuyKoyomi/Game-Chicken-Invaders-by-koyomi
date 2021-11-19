@@ -2,6 +2,8 @@ import pygame
 import random
 import sys
 
+from pygame import image
+
 from Chicken_modul import chicken_thighs, chicken,chicken_missile 
 from Base_modul import Base, Base_missile,Base_defense
 from check_collision import check_base_missile_and_chicken, check_roket_and_chicken,update_chicken_hit,check_base_and_chicken_missile,check_base_and_chicken_thighs
@@ -11,8 +13,7 @@ from display_on_screen import display_on_screen,display_boss_hp,display_game_ove
 from boss_modul import Boss,Boss_missile
 import Base_modul,boss_modul
 
-NUM_OF_CHICKEN = 20
-
+NUM_OF_CHICKEN = 5 
 
 SETTING_BASE_SPEED = 5
 SCREEN_WIDTH = 960
@@ -35,6 +36,10 @@ background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREE
 spaceship_hit_sound = pygame.mixer.Sound('music/spaceship_hit.ogg')
 boom_sound = pygame.mixer.Sound('music/boom_sound.mp3')
 
+# lay data de setting game
+def read_setting_imformation():
+    with open("setting_imformation") as file:     # doc file
+        return int(file.read())
 
 def main():
     #======================================================================================
@@ -158,4 +163,5 @@ def main():
 
     return
 
+NUM_OF_CHICKEN = read_setting_imformation()
 main()

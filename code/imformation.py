@@ -2,6 +2,7 @@ import pygame
 import os
 import sys
 import button
+pygame.init()
 
 SCREEN_WIDTH = 960
 SCREEN_HEIGHT = 614
@@ -13,10 +14,17 @@ back_image = pygame.transform.scale(back_image, (SCREEN_WIDTH/10, SCREEN_HEIGHT/
 imformtion_image = pygame.image.load('image/imformation.PNG')
 imformtion_image = pygame.transform.scale(imformtion_image, (SCREEN_WIDTH/1.5, SCREEN_HEIGHT/1.5))
 
+sound1 = pygame.mixer.Sound('music/first_date.mp3')
+music_one_time = True   # chạy nhạc 1 lần
+
 run=True
 back_button = button.Button(30,30,back_image)
 while run:
     
+    if music_one_time:
+        sound1.play()
+        music_one_time = False
+        
     game_screen.blit(background_image, [0, 0])
     game_screen.blit(imformtion_image, [150, 100])
 

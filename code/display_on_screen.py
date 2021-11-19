@@ -83,3 +83,10 @@ def display_winner(base):
         score_text = 'Thank You For Playing ^^!'
         display_text = font1.render(score_text, True, LIGHT_YELLOW)
         game_screen.blit(display_text , [150,480])
+
+def display_setting():
+    txt1 = font1.render("SET THE NUMBER OF CHICKENS", True, LIGHT_YELLOW)
+    game_screen.blit(txt1,[100,200])
+    txt1 = font1.render("   10                   20                  30", True, LIGHT_YELLOW)
+    game_screen.blit(txt1,[100,300])
+    

@@ -103,5 +103,5 @@ def check_roket_and_boss(boss,rocket,base):
         chicken_rect = pygame.Rect(boss.x_loc, boss.y_loc, Chicken_modul.chicken_width, Chicken_modul.chicken_height)
         rocket_rect = pygame.Rect(rocket.x_loc - rocket_modul.rocket_width / 2.5, 30, rocket_modul.rocket_width, rocket_modul.rocket_height )
         if rocket_rect.colliderect(chicken_rect): # nếu băn trúng
-            boss.hp -= 0.2
+            boss.hp -= 0.3
             base.score += 1
