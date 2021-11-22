@@ -22,10 +22,9 @@ def check_base_missile_and_chicken(chicken,base_missile,base):
                 chicken.hit = True
                 chicken.hit_time = 100 #UFO_HIT_TIME
                 chicken.off_time = 200
-                launch_sound.play()
+                launch_sound.play() # gọi file âm thanh
                 base.score += 10
-                
-                
+                              
 #=======================================================================================
 def update_chicken_hit(chicken):
     if chicken.hit_time > 0:

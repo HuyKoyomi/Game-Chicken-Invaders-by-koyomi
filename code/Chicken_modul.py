@@ -62,6 +62,7 @@ class chicken:
     color = 1
 
     #----------------------------------------------------------------------------------
+    # chọn hình ảnh con gà
     def random_chicken(self):
         self.x_loc = random.choice([chicken_left_x,chicken_right_x])
         self.color = random.randint(1,7)
@@ -79,8 +80,6 @@ class chicken:
             if self.color == 5: game_screen.blit(ga_5_image, [self.x_loc , self.y_loc])
             if self.color == 6: game_screen.blit(ga_6_image, [self.x_loc , self.y_loc])
             if self.color == 7: game_screen.blit(ga_7_image, [self.x_loc , self.y_loc])
-    pass
-
   
     # di chuyển gà
     def move(self):
@@ -125,7 +124,6 @@ class chicken:
                     self.direction= random.choice(CHICKEN_DIRECTIONS)
         pass
 
-    #-----------------------------------------------------------------------------
     # ve khien
     def chicken_defense(self):
         if self.ray_time > 0 and self.hit == False:
@@ -133,7 +131,7 @@ class chicken:
                 game_screen.blit(chicken_ray_image_1, [self.x_loc + 25, self.y_loc + chicken_height])
             else:
                 game_screen.blit(chicken_ray_image_2, [self.x_loc + 25, self.y_loc + chicken_height])
-    #-----------------------------------------------------------------------
+    # sử dụng khiên
     def use_ray(self):
         # nếu ufo còn sống và ray_time == 0 => radom
         if self.ray_time == 0 and self.hit is False: 

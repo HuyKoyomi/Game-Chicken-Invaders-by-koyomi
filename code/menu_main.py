@@ -48,7 +48,7 @@ while run:
 
     if contact_button.draw()==True:
         pygame.quit()
-        os.system('py imformation.py')
+        os.system('py contact.py')
         sys.exit() 
 
     if option_button.draw() == True:

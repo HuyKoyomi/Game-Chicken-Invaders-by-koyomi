@@ -47,7 +47,7 @@ def main():
     chicken_thighs_list = []
     for i in range(NUM_OF_CHICKEN):
         tmp = chicken()
-        tmp.random_chicken()
+        tmp.random_chicken()    
         chicken_list.append(tmp)
         tmp1 = chicken_missile()
         chicken_missile_list.append(tmp1)
